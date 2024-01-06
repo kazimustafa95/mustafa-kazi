@@ -8,7 +8,7 @@ export async function POST(request) {
     const { email, password } = reqBody;
  
     // Check if the email and password match your predefined values
-    if (email !== "saleem123@gmail.com" || password !== "Saleem12345!@") {
+    if (email !== "mustafakazi@hbox.com" || password !== "hbox12345!@") {
         return NextResponse.json({
             message: "Invalid email or password",
             success: false,
