@@ -7,12 +7,12 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "React Portfolio",
+    title: "Full Stack React.js | Next.js web Application",
+    description: "Avanar | All-in-one Finance App Boosting your Money, Life ...",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "https://hamoodas.netlify.app/",
-    previewUrl: "https://hamoodas.netlify.app/",
+    gitUrl: "https://www.avanar.com/",
+    previewUrl: "https://www.avanar.com/",
   },
   {
     id: 2,
