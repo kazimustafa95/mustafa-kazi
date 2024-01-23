@@ -2,7 +2,7 @@ import React from "react";
 import {  EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+const ProjectCard = ({ imgUrl, title, description, previewUrl }) => {
   return (
     <div>
       <div

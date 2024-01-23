@@ -9,36 +9,32 @@ const projectsData = [
     id: 1,
     title: "Full Stack React.js | Next.js web Application",
     description: "Avanar | All-in-one Finance App Boosting your Money, Life ...",
-    image: "/images/projects/1.png",
+    image: "/images/nextjs/1.png",
     tag: ["All", "Web"],
-    gitUrl: "https://www.avanar.com/",
     previewUrl: "https://www.avanar.com/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Potography Portfolio  amazing Website",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/fitsaleem",
-    previewUrl: "https://github.com/fitsaleem",
+    title: "Full Stack Solar Investment Tax Credits (ITCS) Application with custom CMS",
+    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
+    image: "/images/php/1.png",
+    tag: ["All", "Web" ,"PHP"],
+    previewUrl: "https://www.claimyoursolarcredit.com/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
+    title: "NtSuites Office and Salon suite Rental Application",
     description: "E-commerce Application",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/fitsaleem/e-comerce-website",
-    previewUrl: "https://github.com/fitsaleem/e-comerce-website",
+    image: "/images/wordpress/1.png",
+    tag: ["All", "Wordpress"],
+    previewUrl: "https://ntsuites.com/",
   },
   {
     id: 4,
     title: "software development Application",
     description: " software development consulting services for businesses.",
     image: "/images/projects/9.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "https://fitcodding.netlify.app/",
+    tag: ["All", "Next.js"],
     previewUrl: "https://fitcodding.netlify.app/",
   },
   {
@@ -47,7 +43,6 @@ const projectsData = [
     description: "Next js CarHab full stack application",
     image: "/images/projects/7.png",
     tag: ["All", "Web"],
-    gitUrl: "https://carhub-coral.vercel.app/",
     previewUrl: "https://carhub-coral.vercel.app/",
   },
   {
@@ -56,7 +51,30 @@ const projectsData = [
     description: "Next js Movies full stack application",
     image: "/images/projects/8.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/fitsaleem/nextjs-movies-web",
+    previewUrl: "https://nextjs-movies-web.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "Full-stack Applicaton",
+    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
+    image: "/images/projects/8.png",
+    tag: ["All", "Web" ,"React.js"],
+    previewUrl: "https://nextjs-movies-web.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Full-stack Applicaton",
+    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
+    image: "/images/projects/8.png",
+    tag: ["All", "Web" ,"PHP"],
+    previewUrl: "https://nextjs-movies-web.vercel.app/",
+  },
+  {
+    id: 9,
+    title: "Full-stack Applicaton",
+    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
+    image: "/images/projects/8.png",
+    tag: ["All", "Web" ,"Wordpress"],
     previewUrl: "https://nextjs-movies-web.vercel.app/",
   },
  
@@ -99,8 +117,23 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Next.js"
+          isSelected={tag === "Next.js"}
+        />
+         <ProjectTag
+          onClick={handleTagChange}
+          name="React.js"
+          isSelected={tag === "React.js"}
+        />
+         <ProjectTag
+          onClick={handleTagChange}
+          name="PHP"
+          isSelected={tag === "PHP"}
+        />
+          <ProjectTag
+          onClick={handleTagChange}
+          name="Wordpress"
+          isSelected={tag === "Wordpress"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 px-10">
@@ -117,7 +150,6 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
-              gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />
           </motion.li>

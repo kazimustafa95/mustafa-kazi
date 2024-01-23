@@ -19,7 +19,7 @@ export async function POST(request) {
     const tokenData = {
         id: "predefinedId",
         username: "predefinedUsername",
-        email: "saleem123@gmail.com",
+        email: "mustafakazi@hbox.com",
     };
  
     // Generate the token
