@@ -1,89 +1,29 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef ,useEffect} from "react";
 import ProjectCard from "../components/ProjectCard";
 import ProjectTag from "../components/ProjectTag";
 import { motion, useInView } from "framer-motion";
+import axios from 'axios';
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Full Stack React.js | Next.js web Application",
-    description: "Avanar | All-in-one Finance App Boosting your Money, Life ...",
-    image: "/images/nextjs/1.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://www.avanar.com/",
-  },
-  {
-    id: 2,
-    title: "Full Stack Solar Investment Tax Credits (ITCS) Application with custom CMS",
-    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
-    image: "/images/php/1.png",
-    tag: ["All", "Web" ,"PHP"],
-    previewUrl: "https://www.claimyoursolarcredit.com/",
-  },
-  {
-    id: 3,
-    title: "NtSuites Office and Salon suite Rental Application",
-    description: "E-commerce Application",
-    image: "/images/wordpress/1.png",
-    tag: ["All", "Wordpress"],
-    previewUrl: "https://ntsuites.com/",
-  },
-  {
-    id: 4,
-    title: "software development Application",
-    description: " software development consulting services for businesses.",
-    image: "/images/projects/9.png",
-    tag: ["All", "Next.js"],
-    previewUrl: "https://fitcodding.netlify.app/",
-  },
-  {
-    id: 5,
-    title: "Full-stack Applicaton",
-    description: "Next js CarHab full stack application",
-    image: "/images/projects/7.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://carhub-coral.vercel.app/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Applicaton",
-    description: "Next js Movies full stack application",
-    image: "/images/projects/8.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://nextjs-movies-web.vercel.app/",
-  },
-  {
-    id: 7,
-    title: "Full-stack Applicaton",
-    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
-    image: "/images/projects/8.png",
-    tag: ["All", "Web" ,"React.js"],
-    previewUrl: "https://nextjs-movies-web.vercel.app/",
-  },
-  {
-    id: 8,
-    title: "Full-stack Applicaton",
-    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
-    image: "/images/projects/8.png",
-    tag: ["All", "Web" ,"PHP"],
-    previewUrl: "https://nextjs-movies-web.vercel.app/",
-  },
-  {
-    id: 9,
-    title: "Full-stack Applicaton",
-    description: "Trading of solar Investment Tax Credits (ITCS) and provide our clients with a seamless and secure experience.",
-    image: "/images/projects/8.png",
-    tag: ["All", "Web" ,"Wordpress"],
-    previewUrl: "https://nextjs-movies-web.vercel.app/",
-  },
- 
-];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
+
+ const [projectsData, setProjectsData] = useState([]);
+ const [tag, setTag] = useState("All");
+ const ref = useRef(null);
+ const isInView = useInView(ref, { once: true });
+
+ // Fetch projects data from API
+ useEffect(() => {
+    axios.get('/api/projects')
+      .then(response => {
+        setProjectsData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching projects:', error);
+      });
+ }, []);
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
